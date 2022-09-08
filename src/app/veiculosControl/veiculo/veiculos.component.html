@@ -1,0 +1,101 @@
+
+<mat-card>
+
+  <mat-toolbar>
+    <span>Veiculos Cadastrados</span>
+  </mat-toolbar>
+
+<div *ngIf="veiculos$ | async as veiculos; else loading">
+<table mat-table [dataSource]="veiculos" class="mat-elevation-z8">
+
+  <!-- id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let veiculo"> {{ veiculo.id }}
+    </td>
+  </ng-container>
+
+  <!-- veiculo Column -->
+  <ng-container matColumnDef="veiculo">
+    <th mat-header-cell *matHeaderCellDef> Veiculo </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.veiculo}} </td>
+  </ng-container>
+
+  <!-- marca Column -->
+  <ng-container matColumnDef="marca">
+    <th mat-header-cell *matHeaderCellDef> Marca </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.marca}} </td>
+  </ng-container>
+
+  <!-- Ano Column -->
+  <ng-container matColumnDef="ano">
+    <th mat-header-cell *matHeaderCellDef> Ano </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.ano}} </td>
+  </ng-container>
+
+  <!-- descricao Column -->
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef> Descrição </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.descricao}} </td>
+  </ng-container>
+
+  <!-- cor Column -->
+  <ng-container matColumnDef="cor">
+    <th mat-header-cell *matHeaderCellDef> Cor </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.cor}} </td>
+  </ng-container>
+
+  <!-- vendido Column -->
+  <ng-container matColumnDef="vendido">
+    <th mat-header-cell *matHeaderCellDef> Vendido </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.vendido}} </td>
+  </ng-container>
+
+  <!-- created Column -->
+  <ng-container matColumnDef="created">
+    <th mat-header-cell *matHeaderCellDef> Created </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.created}} </td>
+  </ng-container>
+
+  <!-- updated Column -->
+  <ng-container matColumnDef="updated">
+    <th mat-header-cell *matHeaderCellDef> Updated </th>
+    <td mat-cell *matCellDef="let veiculo"> {{veiculo.updated}} </td>
+  </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-mini-fab color="accent" aria-label="Add Veiculo">
+          <mat-icon (click)="onAdd()">add</mat-icon>
+        </button>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let veiculo">
+        <button mat-icon-button color="primary" aria-label="Edit Veiculo">
+          
+        </button>
+
+        <button mat-icon-button color="warn" aria-label="Remove Veiculo">
+
+        </button>
+
+      </mat-cell>
+
+    </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</div>
+
+<ng-template #loading>
+  <div class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+</mat-card>

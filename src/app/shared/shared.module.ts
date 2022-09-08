@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { CategoryPipe } from './pipes/category.pipe';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -13,7 +14,8 @@ import { CategoryPipe } from './pipes/category.pipe';
   ],
   imports: [
     CommonModule,
-    AppMaterialModule
+    AppMaterialModule,
+    MatFormFieldModule
   ],
   exports: [
     ErrorDialogComponent,

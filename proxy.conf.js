@@ -1,6 +1,6 @@
 const PROXY_CONFIG = [
   {
-    context: ['/api'],
+    context: ['/veiculos'],
     target: 'http://localhost:8080/',
     source: false,
     logLevel: 'debug'

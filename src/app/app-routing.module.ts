@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'veiculos' },
   {
     path: 'veiculos',
-    loadChildren: () => import('./veiculosControl/veiculos.module').then(m => m.VeiculosModule)
+    loadChildren: () => import('./veiculos/veiculos.module').then(m => m.VeiculosModule)
   }
 ];
 

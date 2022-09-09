@@ -7,13 +7,15 @@ import { VeiculosComponent } from './veiculo/veiculos.component';
 import { SharedModule } from '../shared/shared.module';
 import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VeiculosListComponent } from './veiculos-list/veiculos-list.component';
 
 
 
 @NgModule({
   declarations: [
     VeiculosComponent,
-    VeiculoFormComponent
+    VeiculoFormComponent,
+    VeiculosListComponent
   ],
   imports: [
     CommonModule,

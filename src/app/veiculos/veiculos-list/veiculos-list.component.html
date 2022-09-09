@@ -1,0 +1,83 @@
+<mat-table [dataSource]="veiculos">
+
+  <!-- id Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{ veiculo.id }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- veiculo Column -->
+  <ng-container matColumnDef="veiculo">
+    <mat-header-cell *matHeaderCellDef> Veiculo </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.veiculo}} </mat-cell>
+  </ng-container>
+
+  <!-- marca Column -->
+  <ng-container matColumnDef="marca">
+    <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.marca}} </mat-cell>
+  </ng-container>
+
+  <!-- Ano Column -->
+  <ng-container matColumnDef="ano">
+    <mat-header-cell *matHeaderCellDef> Ano </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.ano}} </mat-cell>
+  </ng-container>
+
+  <!-- descricao Column -->
+  <ng-container matColumnDef="descricao">
+    <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.descricao}} </mat-cell>
+  </ng-container>
+
+  <!-- cor Column -->
+  <ng-container matColumnDef="cor">
+    <mat-header-cell *matHeaderCellDef> Cor </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.cor}} </mat-cell>
+  </ng-container>
+
+  <!-- vendido Column -->
+  <ng-container matColumnDef="vendido">
+    <mat-header-cell *matHeaderCellDef> Vendido </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.vendido}} </mat-cell>
+  </ng-container>
+
+  <!-- created Column -->
+  <ng-container matColumnDef="created">
+    <mat-header-cell *matHeaderCellDef> Created </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.created}} </mat-cell>
+  </ng-container>
+
+  <!-- updated Column -->
+  <ng-container matColumnDef="updated">
+    <mat-header-cell *matHeaderCellDef> Updated </mat-header-cell>
+    <mat-cell *matCellDef="let veiculo"> {{veiculo.updated}} </mat-cell>
+  </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="action-collum-header">
+        <button mat-mini-fab color="accent" aria-label="Add Veiculo">
+          <mat-icon (click)="onAdd()">add</mat-icon>
+        </button>
+      </mat-header-cell>
+
+      <mat-cell class="action-collum" *matCellDef="let veiculo">
+        <button mat-icon-button color="primary" aria-label="Edit Veiculo">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" aria-label="Remove Veiculo">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </mat-cell>
+
+    </ng-container>
+
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
